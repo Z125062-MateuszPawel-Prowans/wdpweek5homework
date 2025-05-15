@@ -6,11 +6,19 @@ const questionText = document.getElementById("question");
 const optionsContainer = document.getElementById("options");
 const nextBtn = document.getElementById("nextBtn");
 const resultBox = document.getElementById("result");
+const timerDisplay = document.getElementById("question-timer");
+const timerProgress = document.getElementById("timer-progress");
+const questionsProgress = document.getElementById("progress-bar");
 
-fetch("questions.json")
+const timerTime = 12;
+let timerInterval = null;
+let timeLeft = 0;
+
+fetch("/wdpweek5homework/part2/questions.json")
   .then(res => res.json())
   .then(data => {
     questions = data;
+    shuffle(questions);
     showQuestion();
   });
 
@@ -21,16 +29,59 @@ function showQuestion() {
   const q = questions[currentQuestionIndex];
   questionText.textContent = q.question;
 
-   //INPUT YOUR CODE HERE
-   //HINT: Loop through each option for the current question
+  questionsProgress.style.width = `${((currentQuestionIndex + 1) / questions.length) * 100}%`;
+
   q.options.forEach((option, index) => {
-  // TODO:
-  // 1. Create a button element
-  // 2. Set the button's text to the option
-  // 3. Add a class to style it
-  // 4. Add an onclick event that calls checkAnswer(index)
-  // 5. Add the button to the optionsContainer
+    let btn = document.createElement("button");
+    btn.textContent = option;
+    btn.classList.add("option-btn");
+    btn.onclick = () => checkAnswer(index);
+    optionsContainer.appendChild(btn);
 });
+  startTimer();
+}
+
+function startTimer() {
+  if(timerInterval) {
+    clearInterval(timerInterval);
+  }
+  timeLeft = timerTime;
+  let timerLoop = () => {
+    timeLeft--;
+    timerDisplay.innerHTML = `Time left: ${timeLeft}s`;
+    timerProgress.style.width = `${(timeLeft / timerTime) * 100}%`;
+
+    if(timeLeft <= 10) {
+      timerDisplay.style.color = "red";
+      timerProgress.style.backgroundColor = "red";
+      timerDisplay.style.animation = "shaking 0.3s infinite";
+    } else {
+      timerDisplay.style.removeProperty("color");
+      timerProgress.style.removeProperty("background-color");
+      timerDisplay.style.removeProperty("animation");
+    }
+
+    if(timeLeft <= 0) {
+      timerDisplay.innerHTML = "Time's up!";
+      timerProgress.style.width = "0%";
+
+      timerDisplay.style.removeProperty("animation");
+    }
+
+    if (timeLeft <= 0) {
+      stopTimer();
+      checkAnswer(-1);
+    }
+  };
+  timerLoop();
+  timerInterval = setInterval(timerLoop, 1000);
+
+}
+
+function stopTimer() {
+  if (timerInterval) {
+    clearInterval(timerInterval);
+  }
 }
 
 function checkAnswer(selectedIndex) {
@@ -38,30 +89,45 @@ function checkAnswer(selectedIndex) {
   if (selectedIndex === correct) {
     score++;
   }
+  stopTimer();
   nextBtn.disabled = false;
   Array.from(optionsContainer.children).forEach((btn, i) => {
     btn.disabled = true;
-    if (i === correct) btn.style.backgroundColor = "#a4edba";
-    if (i === selectedIndex && i !== correct) btn.style.backgroundColor = "#f5a3a3";
+    
+    if (i === correct) btn.classList.add("correct");
+    else if (i === selectedIndex && i !== correct || selectedIndex==-1) btn.classList.add("incorrect");
   });
 }
 
 function clearOptions() {
-  // INPUT YOUR CODE HERE
-  // HINT
-  // 1. Clear the contents of the options container
-  // 2. Disable the Next button so users can't skip ahead
+  optionsContainer.innerHTML = "";
+  nextBtn.disabled = true;
+
 }
 
 nextBtn.addEventListener("click", () => {
-  // INPUT YOUR CODE HERE
-  // HINT
-  // 1. Move to the next question by increasing the question index
-  // 2. If there are questions left, show the next one
-  // 3. Otherwise, call a function to show the final result
+  currentQuestionIndex++;
+  if (currentQuestionIndex < questions.length) {
+    showQuestion();
+  } else {
+    showResult();
+  }
 });
 
 
 function showResult() {
   document.querySelector(".quiz-box").innerHTML = `<h2>Your score: ${score} / ${questions.length}</h2>`;
+}
+
+function shuffle(array) {
+  let currentIndex = array.length;
+
+  while (currentIndex != 0) {
+
+    let randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex--;
+
+    [array[currentIndex], array[randomIndex]] = [
+      array[randomIndex], array[currentIndex]];
+  }
 }
