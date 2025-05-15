@@ -10,7 +10,7 @@ const timerDisplay = document.getElementById("question-timer");
 const timerProgress = document.getElementById("timer-progress");
 const questionsProgress = document.getElementById("progress-bar");
 
-const timerTime = 12;
+const timerTime = 30;
 let timerInterval = null;
 let timeLeft = 0;
 
