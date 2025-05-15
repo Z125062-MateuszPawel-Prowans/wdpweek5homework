@@ -1,0 +1,302 @@
+[
+  {
+    "question": "What does HTML stand for?",
+    "options": [
+      "Hyper Text Markup Language",
+      "Home Tool Markup Language",
+      "Hyperlinks and Text Mark Language",
+      "Hyper Trainer Markup Language"
+    ],
+    "answer": 0
+  },
+  {
+    "question": "Which tag is used to create a hyperlink in HTML?",
+    "options": [
+      "<img>",
+      "<a>",
+      "<link>",
+      "<href>"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "What symbol is used to begin a comment in JavaScript?",
+    "options": [
+      "//",
+      "/*",
+      "#",
+      "--"
+    ],
+    "answer": 0
+  },
+  {
+    "question": "Which property changes the background color in CSS?",
+    "options": [
+      "color",
+      "bgcolor",
+      "background-color",
+      "font-color"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "What does CSS stand for?",
+    "options": [
+      "Creative Style Sheet",
+      "Computer Style Sheet",
+      "Cascading Style Sheets",
+      "Colorful Style System"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "Which language is used to style a web page?",
+    "options": [
+      "HTML",
+      "JQuery",
+      "CSS",
+      "XML"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "What keyword declares a variable in JavaScript?",
+    "options": [
+      "variable",
+      "dim",
+      "var",
+      "set"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "Which HTML element contains metadata?",
+    "options": [
+      "<meta>",
+      "<data>",
+      "<head>",
+      "<header>"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "Which operator checks for both value and type in JavaScript?",
+    "options": [
+      "==",
+      "===",
+      "=",
+      "!="
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Which HTML tag is used to display images?",
+    "options": [
+      "<pic>",
+      "<image>",
+      "<img>",
+      "<src>"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "Which method adds an element to the end of an array in JavaScript?",
+    "options": [
+      "push()",
+      "pop()",
+      "add()",
+      "insert()"
+    ],
+    "answer": 0
+  },
+  {
+    "question": "Which event occurs when a user clicks an HTML element?",
+    "options": [
+      "onchange",
+      "onmouseover",
+      "onclick",
+      "onhover"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "How do you call a function named `sayHello` in JavaScript?",
+    "options": [
+      "sayHello()",
+      "call sayHello()",
+      "function sayHello()",
+      "sayHello;"
+    ],
+    "answer": 0
+  },
+  {
+    "question": "What is the result of 3 + '2' in JavaScript?",
+    "options": [
+      "5",
+      "32",
+      "NaN",
+      "undefined"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "What does DOM stand for?",
+    "options": [
+      "Document Object Model",
+      "Data Object Mode",
+      "Display Object Method",
+      "Document Orientation Map"
+    ],
+    "answer": 0
+  },
+  {
+    "question": "Which method can be used to round a number in JavaScript?",
+    "options": [
+      "Math.floor()",
+      "Math.round()",
+      "Math.ceil()",
+      "All of the above"
+    ],
+    "answer": 3
+  },
+  {
+    "question": "How can you create a line break in HTML?",
+    "options": [
+      "<lb>",
+      "<br>",
+      "<break>",
+      "<nl>"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Which of the following is a JavaScript framework?",
+    "options": [
+      "Laravel",
+      "Django",
+      "React",
+      "Flask"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "What is the correct HTML tag for the largest heading?",
+    "options": [
+      "<head>",
+      "<h6>",
+      "<heading>",
+      "<h1>"
+    ],
+    "answer": 3
+  },
+  {
+    "question": "Which function converts JSON to a JavaScript object?",
+    "options": [
+      "JSON.convert()",
+      "JSON.stringify()",
+      "JSON.parse()",
+      "JSON.toObject()"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "What tag is used to create a numbered list in HTML?",
+    "options": [
+      "<ol>",
+      "<ul>",
+      "<li>",
+      "<list>"
+    ],
+    "answer": 0
+  },
+  {
+    "question": "What is the default value of a variable declared with `let`?",
+    "options": [
+      "0",
+      "null",
+      "undefined",
+      "empty string"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "How do you write a comment in CSS?",
+    "options": [
+      "// comment",
+      "/* comment */",
+      "<!-- comment -->",
+      "# comment"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Which file extension is correct for JavaScript files?",
+    "options": [
+      ".java",
+      ".js",
+      ".javascript",
+      ".htmljs"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "How do you link a CSS file to HTML?",
+    "options": [
+      "<script href='style.css'>",
+      "<css link='style.css'>",
+      "<link rel='stylesheet' href='style.css'>",
+      "<style src='style.css'>"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "Which JavaScript loop runs at least once even if the condition is false?",
+    "options": [
+      "for",
+      "while",
+      "do...while",
+      "loop"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "Which tag is used to create a form in HTML?",
+    "options": [
+      "<input>",
+      "<form>",
+      "<table>",
+      "<fieldset>"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Which CSS property controls the size of text?",
+    "options": [
+      "font-size",
+      "text-size",
+      "size",
+      "font"
+    ],
+    "answer": 0
+  },
+  {
+    "question": "What method is used to remove the last item of an array?",
+    "options": [
+      "shift()",
+      "pop()",
+      "remove()",
+      "cut()"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Which input type creates a password field in HTML?",
+    "options": [
+      "text",
+      "password",
+      "secure",
+      "hidden"
+    ],
+    "answer": 1
+  }
+]
