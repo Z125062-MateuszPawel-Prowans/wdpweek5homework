@@ -6,7 +6,7 @@ var quotes = [];
 
 function getQuote() {
     if(quotes.length === 0) {
-        fetch("/part1/quotes.json")
+        fetch("/wdpweek5homework/part1/quotes.json")
             .then(response => response.json())
             .then(data => {
                 quotes = data;
